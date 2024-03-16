@@ -588,7 +588,7 @@ body {
   gap: 0.5rem;
   color: rgb(0 0 0 / 0.7);
   font-weight: 100;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1rem;
   text-align: justify;
 }
@@ -711,6 +711,169 @@ body {
   transform: scale(1.2);
 }
 
+/* Services Wrapper  */
+.services__wrapper {
+  width: 100%;
+  padding: 3rem 0 2rem 0;
+  height: auto;
+  background: var(--baby-powder);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Services Header  */
+.services__header {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 3.5rem;
+  letter-spacing: -2.5px;
+  color: var(--midnight-blue);
+}
+
+/* Services Text  */
+.services__text {
+  padding: 1rem 0;
+  width: 60%;
+  text-align: center;
+  font-weight: 300;
+  color: rgb(0 0 0 / 0.7);
+  cursor: pointer;
+  padding: 2rem 0 1rem 0;
+}
+
+/* Services Grid  */
+.services {
+  width: var(--mainWidth);
+  height: 100%;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 0 2rem 0;
+}
+
+/* Service  */
+.service {
+  width: 100%;
+  height: 350px;
+  background: snow;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  outline: hidden;
+}
+
+/* Services Content  */
+.service__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.service__content:hover {
+  box-shadow: 0 0 5px rgb(0 0 0 / 0.1);
+
+}
+
+/* Service Icon Wrapper  */
+.service__icon__wrapper {
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Service Icon  */
+.service__icon {
+  width: 6rem;
+  height: 6rem;
+  background: snow;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.service__icon_i {
+  fill: var(--midnight-blue);
+  width: 3rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.service__icon:hover {
+  background: var(--midnight-blue);
+}
+
+.service__icon:hover > .service__icon_i {
+  fill: snow;
+}
+
+.service__content:hover .service__icon_i {
+  fill: snow;
+}
+
+.service__content:hover .service__icon {
+  background: var(--midnight-blue);
+}
+
+/* Service Title  */
+.service__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -1.5px;
+  color: var(--midnight-blue);
+  transition: all .3s ease-in-out;
+}
+
+.service__content:hover .service__title {
+  transform: scale(1.1);
+}
+
+/* Service Text */
+.service__text {
+  width: 85%;
+  text-align: center;
+  font-weight: 100;
+  color: rgb(0 0 0 / 0.4);
+  padding: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  transition: all .3s ease-in-out;
+}
+
+.service__content:hover .service__text {
+  color: var(--midnight-blue);
+  opacity: .5;
+  transform: scale(1.1);
+}
+
+/* Services Button  */
+.services__button {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services__button .btn {
+  margin: 0;
+}
+
 @media (max-width: 1000px) {
   .navbar {
     display: none;
@@ -732,6 +895,24 @@ body {
 }
 
 @media (max-width: 1150px) {
+  .services {
+    width: var(--mainWidth);
+    height: 100%;
+  
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 0 2rem 0;
+  }
+  .service__content  {
+    padding: 1rem 0;
+  }
+  .service {
+    height: auto;
+  }
+  .service:nth-child(3) {
+    grid-column: span 2;
+  }
   .navbar__container {
     width: 85%;
   }
@@ -842,12 +1023,28 @@ body {
     flex-direction: column;
     gap: 1rem;
   }
-
-  
 }
 
 /* Media Queries  */
 @media (max-width: 750px) {
+  .services__text {
+    width: 80%;
+  }
+  .services {
+    width: var(--mainWidth);
+    height: 100%;
+  
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: 2rem 0 2rem 0;
+  }
+  .service__text {
+    font-size: .7rem;
+  }
+  .service:nth-child(3) {
+    grid-column: span 1;
+  }
   .header__wrapper {
     width: 100%;
     height: 550px;
@@ -978,8 +1175,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.8rem 1rem;
-    font-size: 14px;
+    padding: 0 1rem;
+    font-size: 12px;
   }
 
   .about__us_banner {
@@ -1012,6 +1209,10 @@ body {
     padding: 0 0 1rem 0;
   }
 
+  .services__button {
+    padding: 2rem 0 0 0;
+  }
+
   .about__item__text {
     text-align: left;
   }
@@ -1028,6 +1229,9 @@ body {
     text-align: center;
   }
 
+  .about__items {
+    display: none;
+  }
 }
 
 @media (max-width: 450px) {
