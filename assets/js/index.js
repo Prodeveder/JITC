@@ -11,19 +11,16 @@ CloseMenu.addEventListener("click", () => {
 });
 
 const headerContent = document.querySelectorAll(".header__container");
-const active = document.querySelectorAll('.__active');
-
-
-console.log(headerContent);
+const active = document.querySelectorAll(".__active");
 
 const clearHeader = () => {
   headerContent.forEach((Element) => {
     Element.style.display = "none";
-    Element.classList.remove('active')
+    Element.classList.remove("active");
   });
 
   active.forEach((Element) => {
-    Element.classList.remove('active')
+    Element.classList.remove("active");
   });
 };
 
@@ -47,8 +44,8 @@ const nextSlide = () => {
     headerIndex += 1;
   }
   headerContent[headerIndex].style.display = "block";
-  active[headerIndex].classList.add('active')
-  headerContent[headerIndex].classList.add('active')
+  active[headerIndex].classList.add("active");
+  headerContent[headerIndex].classList.add("active");
 };
 
 const prevSlide = () => {
@@ -60,11 +57,34 @@ const prevSlide = () => {
     headerIndex -= 1;
   }
   headerContent[headerIndex].style.display = "block";
-  active[headerIndex].classList.add('active')
-  headerContent[headerIndex].classList.add('active')
-
+  active[headerIndex].classList.add("active");
+  headerContent[headerIndex].classList.add("active");
 };
 
 runSlider();
 
-console.log('😁😁😁')
+const toggleHeaders = document.querySelectorAll(".toggle__header");
+const toggleMinus = document.querySelectorAll(".toggle__header .icon .minus");
+const togglePlus = document.querySelectorAll(".toggle__header .icon .plus");
+const togglePanels = document.querySelectorAll('.toggle__panel');
+
+togglePanels[0].style.display = 'flex';
+
+toggleHeaders.forEach((toggleHeader) => {
+  toggleHeader.addEventListener("click", function () {
+    let i = toggleHeader.classList[1];
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "flex") {
+      panel.style.display = "none";
+      toggleMinus[i].style.display = "none";
+      togglePlus[i].style.display = "block";
+    } else {
+      panel.style.display = "flex";
+      toggleMinus[i].style.display = "block";
+      togglePlus[i].style.display = "none";
+    }
+  });
+});
+
+console.log("😁😁😁");
