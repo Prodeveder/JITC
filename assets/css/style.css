@@ -268,7 +268,7 @@ a {
 /* Header  */
 header {
   width: 100%;
-  height: 750px;
+  height: 850px;
   position: relative;
 }
 
@@ -638,8 +638,65 @@ header {
 /* About Toggle Wrapper  */
 .about__toggle__wrapper {
   width: 100%;
-  height: 350px;
-  background: var(--mid-off);
+  height: auto;
+  /* background: var(--mid-off); */
+  display: flex;
+  justify-content: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.toggle__header {
+  border: none;
+  width: 100%;
+
+  text-align: left;
+  padding: .8rem 1rem;
+  color: var(--midnight-blue);
+  font-weight: bold;
+  font-family: font;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  letter-spacing: -1px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle__header:hover {
+  filter: brightness(1);
+}
+
+.toggle__header .icon svg {
+  width: 1rem;
+  fill: var(--midnight-blue);
+}
+
+.toggle__header .icon .minus {
+  display: none;
+}
+
+.toggle__panel {
+  background: #ddd;
+
+  width: 100%;
+  height: auto;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: .8rem 0;
+}
+
+.toggle__panel .text {
+  font-size: 12px;
+  line-height: 14px;
+  opacity: .8;
+  color: var(--midnight-blue);
+  width: 90%;
 }
 
 /* About Services Wrapper  */
