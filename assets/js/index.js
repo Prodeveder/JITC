@@ -69,6 +69,8 @@ const togglePlus = document.querySelectorAll(".toggle__header .icon .plus");
 const togglePanels = document.querySelectorAll('.toggle__panel');
 
 togglePanels[0].style.display = 'flex';
+toggleMinus[0].style.display = "block";
+togglePlus[0].style.display = "none";
 
 toggleHeaders.forEach((toggleHeader) => {
   toggleHeader.addEventListener("click", function () {
