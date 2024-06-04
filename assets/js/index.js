@@ -66,3 +66,5 @@ const prevSlide = () => {
 };
 
 runSlider();
+
+console.log('😁😁😁')
